@@ -1,0 +1,7 @@
+export const fetchSchedule = async () => {
+  const url = 'https://courses.cs.northwestern.edu/394/guides/data/cs-courses.php';
+  const response = await fetch(url);
+  if (!response.ok) throw response;
+
+  return await response.json();
+};

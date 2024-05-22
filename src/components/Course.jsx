@@ -1,11 +1,11 @@
 const terms = { F: 'Fall', W: 'Winter', S: 'Spring'};
 
 const getCourseTerm = course => (
-  terms[course.id.charAt(0)]
+  course.term
 );
 
 const getCourseNumber = course => (
-  course.id.slice(1, 4)
+  course.number
 );
 
 export const Course = ({ course }) => (
