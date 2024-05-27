@@ -1,5 +1,5 @@
 import TermButton from "./TermButton";
-import { terms } from "./Course";
+import { terms } from "../utils/times";
 
 const TermSelector = ({term, setTerm}) => (
   <div className="btn-group">

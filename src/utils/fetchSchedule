@@ -1,4 +1,4 @@
-import { addScheduleTimes } from "../components/Course";
+import { addScheduleTimes } from './times';
 
 export const fetchSchedule = async () => {
   const url = 'https://courses.cs.northwestern.edu/394/guides/data/cs-courses.php';
