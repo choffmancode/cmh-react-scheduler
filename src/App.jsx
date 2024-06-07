@@ -1,12 +1,19 @@
 import React from 'react';
+
+// Components
 import {CourseList} from './components/CourseList';
 import {Banner} from './components/Banner';
-import './App.css';
+
+// Utils
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import {fetchSchedule} from './utils/fetchSchedule';
 import { useData } from './utils/firebase.js';
 import { addScheduleTimes } from './utils/times';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {EditForm} from './EditForm';
 
+// Styles
+import './App.css';
 
 
 
@@ -24,7 +31,12 @@ const Main = () =>  {
   return (
     <div className="container">
       <Banner title={ data.title } />
-      <CourseList courses={ data.courses } />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<CourseList courses={ data.courses } />} />
+          <Route path="/edit" element={ <EditForm /> } />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
