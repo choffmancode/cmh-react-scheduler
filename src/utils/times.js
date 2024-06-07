@@ -52,10 +52,11 @@ export const getCourseNumber = course => (
   );
   
   export const addScheduleTimes = schedule => ({
-    title: schedule.title,
-    courses: mapValues(addCourseTimes, schedule.courses)
-  });
-
+   title: schedule.title,
+   courses: mapValues(addCourseTimes, schedule.courses)
+  }
+  );
+  
   export const hasConflict = (course, selected) => (
     selected.some(selection => courseConflict(course, selection))
   );
