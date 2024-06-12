@@ -29,7 +29,9 @@ export const getCourseNumber = course => (
   
   const addCourseTimes = course => ({
     ...course,
-    ...timeParts(course.meets)
+    ...timeParts(course.meets),
+    term: course?.term,
+    id: `${course?.term?.slice(0,1)}${course?.number}`
   });
   
   const days = ['M', 'Tu', 'W', 'Th', 'F'];
